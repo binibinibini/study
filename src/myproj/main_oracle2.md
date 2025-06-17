@@ -17,3 +17,6 @@ if __name__ == '__main__':
                 print(row)
 ```
 ![image](https://github.com/user-attachments/assets/3538969c-1aec-45c5-8f5e-fee151b68e49)
+<br>
+cursor는 데이버베이스와 대화할 수 있는 통로<br>
+execute()는 SQL문장을 실행하는 함수(내가 이 SQL문장을 DB에 보내서 실행시킬게요!하는 역할)<br>
