@@ -1,0 +1,16 @@
+[파이썬 설치] (https://www.python.org/downloads/release/python-31210/)<br>
+[파이참 설치] https://www.jetbrains.com/ko-kr/pycharm/download/download-thanks.html?platform=windows<br>
+
+![image](https://github.com/user-attachments/assets/79b5d1b0-54dc-48e4-bdb7-9837f5af48c0)
+<br>
+myutil의 __init__py에는 아무것도 안적어서 
+모듈을 각각 임폴트 해야함
+
+myuil2의 __init__py에는
+from .multiply import multiply
+from .divide import divide
+해줘서 메인에서 패키지 이름만 임폴트하면 됨.
+
+- .venv -> 가상환경(프로젝트마다 달라짐)
+- myproj 여기부터 패키지.
+패키지는 기능들을 모아놓은거
