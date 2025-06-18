@@ -85,3 +85,6 @@ if __name__ == '__main__':
     no = int(input('삭제할 부서 번호 입력>>> '))
     delete_dept(no)
 ```
+<br>
+![image](https://github.com/user-attachments/assets/6e64d7bc-1d5b-4a9e-a472-e3da5ae5b88d)
+
