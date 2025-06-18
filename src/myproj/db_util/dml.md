@@ -18,7 +18,7 @@ def insert_table(dept_no, dept_name, location):
                 # positional arg 방식 -> list, tuple, dict
 
                 # 튜플로 넣기
-                cursor.execute(sql_insert, (dept_no, dept_name, location))
+                # cursor.execute(sql_insert, (dept_no, dept_name, location))
 
                 # dic로 넣기
                 cursor.execute(sql_insert, {
