@@ -35,7 +35,7 @@ if __name__ == '__main__'  # 현재 파일을 메인으로 실행할 때
 
 
 
-```결과
+--------결과
 C:\workspace\lab_llm\.venv\Scripts\python.exe C:\workspace\lab_llm\src\lab01\basic.py 
 ChatCompletion(id='chatcmpl-CBxFKLNhoBZmKQHuBbfAuBArzePac', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='당신은 AI 비서와 대화하고 있습니다. 제가 도와드릴 수 있는 것이 있다면 말씀해 주세요!', refusal=None, role='assistant', annotations=[], audio=None, function_call=None, tool_calls=None))], created=1756965386, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier='default', system_fingerprint='fp_560af6e559', usage=CompletionUsage(completion_tokens=26, prompt_tokens=31, total_tokens=57, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
 ----------
@@ -46,4 +46,4 @@ ChatCompletionMessage(content='당신은 AI 비서와 대화하고 있습니다.
 당신은 AI 비서와 대화하고 있습니다. 제가 도와드릴 수 있는 것이 있다면 말씀해 주세요!
 
 종료 코드 0(으)로 완료된 프로세스
-```
+---------
