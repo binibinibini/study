@@ -45,11 +45,15 @@ streamlit run ./src/lab04/streamlit_1.py
 # 192.168.31.11 건물을 찾을 수 있는 번호. 8501 건물에 들어갈 수 있는 번호(포트번호)
 
 
+# 종료 코드
+Ctrl + c
+
+
 # 사이드와 두개의 패널을 갖는 사이트
 streamlit run ./src/lab04/streamlit_2.py
 
 
-
+![파이썬 코드 실행 결과](https://github.com/user-attachments/assets/3538fbec-110e-48af-8f53-274a5df7d94d)
 
 
 <img width="1064" height="558" alt="Image" src="https://github.com/user-attachments/assets/3538fbec-110e-48af-8f53-274a5df7d94d" />
