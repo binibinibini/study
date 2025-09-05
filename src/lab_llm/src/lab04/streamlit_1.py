@@ -49,3 +49,9 @@ streamlit run ./src/lab04/streamlit_1.py
 streamlit run ./src/lab04/streamlit_2.py
 
 
+
+
+
+https://github.com/binibinibini/study/issues/1#issue-3386119767
+
+
