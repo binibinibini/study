@@ -52,6 +52,6 @@ streamlit run ./src/lab04/streamlit_2.py
 
 
 
-https://github.com/binibinibini/study/issues/1#issue-3386119767
+<img width="1064" height="558" alt="Image" src="https://github.com/user-attachments/assets/3538fbec-110e-48af-8f53-274a5df7d94d" />
 
 
