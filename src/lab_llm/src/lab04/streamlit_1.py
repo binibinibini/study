@@ -48,5 +48,4 @@ streamlit run ./src/lab04/streamlit_1.py
 # 사이드와 두개의 패널을 갖는 사이트
 streamlit run ./src/lab04/streamlit_2.py
 
-image1 = Image.open('C:\Users\itwill\Desktop\스크린샷 2025-09-05 110121.png')
-image1
+
