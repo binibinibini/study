@@ -39,7 +39,18 @@ import pandas as pd
 import numpy as np
 
 def main():
-    st.title('처음 만들어 본 Streamlit')
+    st.title('처음 만들어 본 Streamlit 앱')
+    st.write('안녕하세요. 저는 배은빈입니다.')
+
+    df = pd.DataFrame({
+          'X1' : np.arange(1, 6),
+          'X2' : np.random.randint(low = 100, size = 5)
+    })
+    # st.write(df)
+    st.dataframe(df)
+
+if __name__ == '__main__':
+    main()
 ```
 
 
@@ -55,9 +66,4 @@ def main():
 # 종료 코드
 Ctrl + c
 ```
-
-
-
-<img width="1064" height="558" alt="Image" src="https://github.com/user-attachments/assets/3538fbec-110e-48af-8f53-274a5df7d94d" />
-
 
