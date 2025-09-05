@@ -49,3 +49,4 @@ streamlit run ./src/lab04/streamlit_1.py
 streamlit run ./src/lab04/streamlit_2.py
 
 image1 = Image.open('C:\Users\itwill\Desktop\스크린샷 2025-09-05 110121.png')
+image1
