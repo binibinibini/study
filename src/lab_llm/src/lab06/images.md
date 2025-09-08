@@ -5,7 +5,11 @@
 
 
 
+
+
+
 <두 번째 사진>
 
 
-<img width="498" height="694" alt="image" src="https://github.com/user-attachments/assets/c82f8e17-920f-4bb1-ab82-3d66570cec36" />
+<img width="541" height="693" alt="image" src="https://github.com/user-attachments/assets/aa81522c-3528-4bd3-b11b-4626e9fdd1f4" />
+
