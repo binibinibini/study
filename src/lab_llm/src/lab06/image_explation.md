@@ -15,11 +15,11 @@ from src.utils import get_openai_api_key
 # 이미지 설명을 요청하는 메시지 프롬프트 작성
 messages = [  # API 요청에 포함될 대화 메시지 목록을 정의
    {
-       'role':'user', # 메시지를 보낸 주
+       'role':'user', # 메시지를 보낸 주체
        'content': [
            {'type': 'text', 'text': '이 이미지를 설명해줘.'},
            {'type': 'image_url', 
-            'image_url':{'url':''https://fastly.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-               AyWv641M4iiOpe1RyFHeI'}}, # API가 접근할 수 있는 이미지의 웹 주소(이 주소를 통해 GPT 모델이 이미지를 직접 다운로드해서 분석함)
+            'image_url':{'url':''https://fastly.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI'}}, # API가 접근할 수 있는 이미지의 웹 주소(이 주소를 통해 GPT 모델이 이미지를 직접 다운로드해서 분석함)
       ],
    },
 ]
