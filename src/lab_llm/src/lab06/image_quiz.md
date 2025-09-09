@@ -12,10 +12,6 @@ def base64encode_image(image_file):
         data = f.read()
         return base64.b64encode(data).decode(encoding='utf-8')
 
-# for g in glob('./images/*.jpg'):
-    #     # print(g)    # 폴더 안에 있는 .jpg 파일이름들 출력
-    #     encoded = base64encode_image(g)
-    #     print(encoded[:100])
 
 def make_image_quiz(client, image_file):
     quiz_prompt = '''제공한 이미지를 가지고 다음과 같은 형식으로 퀴즈를 만들어줘.
