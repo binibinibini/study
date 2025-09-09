@@ -56,10 +56,33 @@ def base64encode_image(image_file):
     with open(file = image_file, mode = 'rb') as f: # 이미지 파일을 오픈.
         data = f.read()  # 이미지 파일의 이진 데이터를 읽음.
 
-
+        # 이진 데이터를 base64 인코딩을 해서 ASCII 문자열로 변환, UTF-8로 변환해서 리턴.
+        return base64.b64encode(data).decode(encoding = 'utf-8')
 ```
+```python
+image_path_1 = 'images/image_4.jpg'
+image_path_2 = 'images/image_5.jpg'
+```
+```python
+base64_image_1 = base64encode_image(image_path_1) # 문자열 리턴
+```
+```python
+base64_image_1[:100] # base64로 인코딩된 문자열들 중에서 앞에서 100개만 출력.
+```
+<img width="828" height="29" alt="image" src="https://github.com/user-attachments/assets/af43afe3-82e5-4ad8-9c90-7d775634ba55" />
 
+```python
+# GPT에게 보낼 메시지 프롬프트 작성
+messages = [
+  {
+      'role': 'user',
+      'content': [
+          {},
 
+       ],
+  },
+]
+```
 
 
 
