@@ -74,46 +74,65 @@ base64_image_1[:100] # base64로 인코딩된 문자열들 중에서 앞에서 1
 ```python
 # GPT에게 보낼 메시지 프롬프트 작성
 messages = [
-  {
-      'role': 'user',
-      'content': [
-          {},
-
-       ],
-  },
+    {
+        'role': 'user',
+        'content': [
+            {'type': 'text', 'text': '이미지에 대해서 설명해줘.'},
+            {
+                'type': 'image_url',
+                'image_url':{'url': f'data:image/jpeg;base64, {base64_image_1}'},
+            },
+        ],
+    },
 ]
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```python
+response = client.chat.completions.create(
+    model = 'gpt-4o-mini',
+    messages = messages
+)
 ```
-두 디저트의 차이점을 설명해드릴게요.
-
-1. **마카롱 (Macaron)**:
-   - **재료**: 주로 아몬드 가루, 설탕, 달걀 흰자 등으로 만들어집니다.
-   - **구조**: 두 개의 얇고 바삭한 외피 사이에 크림이나 잼을 넣어 완성됩니다.
-   - **텍스처**: 겉은 바삭하고 속은 부드러운 조화로운 식감을 제공합니다.
-   - **맛**: 다양한 색상과 맛으로, 프랑스의 전통적인 디저트입니다.
-
-2. **케이크 (Cake)**:
-   - **재료**: 밀가루, 설탕, 계란, 버터 등의 반죽이 기본입니다.
-   - **구조**: 일반적으로 여러 겹의 시트로 이루어진 크림 케이크이며, 다양한 토핑과 장식이 가능합니다.
-   - **텍스처**: 부드럽고 촉촉한 식감을 가지며, 크림이나 아이싱으로 장식되어 시각적으로도 매력적입니다.
-   - **맛**: 각종 맛과 스타일이 있으며, 특히 특별한 날에 자주 만들어집니다.
+```python
+response.choices[0].message.content
 ```
-<img width="666" height="439" alt="image" src="https://github.com/user-attachments/assets/86d686af-84a9-47e1-a15d-7710ba20b40c" />
+```
+'이미지에는 다섯 개의 마카롱이 나열되어 있습니다. 상단에는 분홍색 마카롱이 있으며, 그 아래에는 보라색, 녹색 마카롱이 차례로 쌓여 있습니다. 옆에는 노란색 마카롱이 위치해 있습니다. 배경은 연한 분홍색으로 부드러운 느낌을 주며, 전체적으로 아기자기하고 달콤한 분위기를 형성하고 있습니다. 마카롱들은 각각의 색상이 뚜렷하고 조화롭게 배열되어 있습니다.'
+```
+
+### 이미지 2장을 비교/설명 요청하는 메시지 프롬프트를 작성하고, 실행 결과를 확인해 보세요.
+
+```python
+base64_image_2 = base64encode_image(image_path_2)   # cafe2.jpg를 base64 인코딩
+base64_image_2[:100]
+```
+<img width="837" height="33" alt="image" src="https://github.com/user-attachments/assets/3dc47acf-674e-4f5b-b453-02a67e9cd841" />
+
+```python
+# 이미지 비교를 요청하는 메시지 프롬프트 작성
+message = [
+    {
+        'role': 'user',
+        'content': [
+            {'type': 'text', 'text': '두 디저트의 차이점을 설명해줘.'},
+            {
+                'type': 'image_url',
+                'image_url': {'url': f'data:image/jpeg;base64, {base64_image_1}'},
+            },
+            {
+                'type': 'image_url',
+                'image_url': {'url': f'data:image/jpeg;base64, {base64_image_2}'},
+            },
+        ],
+    },
+]
+```
+```python
+response = client.chat.completions.create(
+    model = 'gpt-4o-mini',
+    messages = message
+)
+```
+```python
+print(response.choices[0].message.content)
+```
+<img width="741" height="341" alt="image" src="https://github.com/user-attachments/assets/7eb1e5cd-06c2-4356-84c2-c1c15ec27c5c" />
