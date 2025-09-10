@@ -46,7 +46,7 @@ tools = [
             'description': '해당 시간대의 현재 날짜와 시간을 문자열로 리턴.',  # 함수 설명(AI는 이 설명을 보고 어떤 질문에 이 함수가 적합한지 판단함)
             'parameters': {
                 'type': 'object',
-                'properties': {
+                'properties': {    # 함수가 받을 수 있는 매개변수 정의
                     'timezone': {'type': 'string',
                                  'description': '현재 날짜와 시간을 반환하기 위한 시간대(예: Asia/Seoul)'},  # timezone 파라미터
                 },  # 파라미터들의 dict
