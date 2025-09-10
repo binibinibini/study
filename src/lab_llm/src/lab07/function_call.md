@@ -22,7 +22,7 @@ def main():
 
     while True:     # 무한 루프
         user_input = input('사용자>>> ')
-        if user_input.strip() == '':
+        if user_input.strip() == '':    # 양 끝에 있는 공백 제거
             continue    # 루프를 다시 반복
         if user_input.strip() == 'exit':
             break   # 무한 루프를 종료
