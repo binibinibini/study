@@ -27,7 +27,7 @@ def main():
         if user_input.strip() == 'exit':
             break   # 무한 루프를 종료
 
-        messages.append({'role':'user', 'content':user_input})
+        messages.append({'role':'user', 'content':user_input})    # 사용자의 역할
         response = get_gpt_response(client, messages)
         print(response)
 
