@@ -1,7 +1,7 @@
 ```python
 from datetime import datetime
-import pytz
-import yfinance as yf
+import pytz # 세계 어디든 정확한 시간을 알려주는거
+import yfinance as yf   # Yohoo Finance의 데이터를 가져오는 라이브러리(주가 데이터, 기업정보, ...)
 
 
 def get_current_time(timezone='Asia/Seoul'):
@@ -27,6 +27,7 @@ def get_yf_stock_history(ticker, period):
     history = stock.history(period=period)  # 현재 시점을 기준으로 지난 period 동안의 매일 추가 DataFrame.
     return history.to_markdown()    # DataFrame을 Markdown 형식의 문자열로 변환해서 리턴.
 
+
 # 추천하는지 추천하지 않은지
 def get_yf_stock_recommendations(ticker):
     """ticker에 해당하는 기업의 지난 4개월간 애널리스트들의 추천(매수, 매도, 유지) 데이터를 리턴."""
@@ -40,9 +41,9 @@ tools = [
     # get_current_time 정보
     {
         'type': 'function',  # 도구 타입: 함수
-        'function': {
+        'function': {   # 호출할 함수에 대한 상세 정보
             'name': 'get_current_time',  # 함수 이름
-            'description': '해당 시간대의 현재 날짜와 시간을 문자열로 리턴.',  # 함수 설명
+            'description': '해당 시간대의 현재 날짜와 시간을 문자열로 리턴.',  # 함수 설명(AI는 이 설명을 보고 어떤 질문에 이 함수가 적합한지 판단함)
             'parameters': {
                 'type': 'object',
                 'properties': {
@@ -110,16 +111,22 @@ tools = [
 
 
 if __name__ == '__main__':
-    # print(get_current_time())
-    # print(get_current_time('Europe/London'))
-    # print(get_current_time('America/New_York'))
-    # print(get_current_time('America/Los_Angeles'))
+    print(get_current_time())
+    print(get_current_time('Europe/London'))
+    print(get_current_time('America/New_York'))
+    print(get_current_time('America/Los_Angeles'))
 
-    # stock_info = get_yf_stock_info('GOOGL')
-    # print(stock_info)
+    print('-----')
 
-    # stock_history = get_yf_stock_history('GOOGL','3d')
-    # print(stock_history)
+    stock_info = get_yf_stock_info('GOOGL')
+    print(stock_info)
+
+    print('-----')
+
+    stock_history = get_yf_stock_history('GOOGL','3d')
+    print(stock_history)
+
+    print('-----')
 
     stock_recommendations = get_yf_stock_recommendations('GOOGL')
     print(stock_recommendations)
