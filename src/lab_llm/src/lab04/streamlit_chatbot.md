@@ -43,7 +43,7 @@ def main():
     for msg in st.session_state['messages']:
         st.chat_message(msg['role']).write(msg['content'])
 
-    user_input = st.chat_input('입력하세요...')
+    user_input = st.chat_input('입력하세요...')    # 사용자로부터 메시지를 입력받는 텍스트 입력 창 만듬
     if user_input:  # chat_input에 입력한 내용이 있으면
         # st.write(user_input)
 
@@ -55,7 +55,7 @@ def main():
             'role': 'user', 'content': user_input
         })
 
-        answer = get_gpt_response(client, st.session_state.messages)
+        answer = get_gpt_response(client, st.session_state.messages)    # 함수 호출해서 GPT 모델에게 대화 기록 보내기
 
         # assistant의 답변을 출력.
         st.chat_message('assistant').write(answer)
