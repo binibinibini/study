@@ -21,23 +21,26 @@ def get_gpt_response(client, messages):
         model='gpt-4o-mini',
         messages=messages,
         tools=tools,  # GPT가 호출할 수 있는 도구 목록
-        stream=True,
+        stream=True,    # GPT 모델이 답변을 작은 조각들로 나누어 타이핑하는 것처럼 보이게 함함
     )
     # stream=True로 설정한 경우, GPT 응답은 generator 패턴(반복iteration을 할 때마다 순서대로 반환)으로 작성해야 함.
     # return 대신 yield를 사용함.
+    # response 제너레이터에서 답변 조각(chunk)이 올 때마다 반복
     for chunk in response:
         yield chunk
 
 
+# 스트리밍 응답에서 조각난 함수 호출 정보를 완전한 객체로 재조립하는 역할을 함
 def delta_tool_calls_to_obj(tools):
+    # 딕셔너리에 키가 존재하지 않을 경우 자동으로 초기값 생성
     tools_dict = defaultdict(lambda: {'id': None,
                                       'function': {'arguments': '', 'name': None},
                                       'type': None})
     for tool in tools:
         # function calling 아이디, 함수 이름, 타입('function')은 첫번째 청크에서만 값이 있기 때문에.
-        if tool.id is not None:
+        if tool.id is not None:    # id가 있을 때만 저장
             tools_dict[tool.index]['id'] = tool.id
-        if tool.function.name is not None:
+        if tool.function.name is not None:    # 이름이 있을 때만 저장
             tools_dict[tool.index]['function']['name'] = tool.function.name
         if tool.type is not None:
             tools_dict[tool.index]['type'] = tool.type
