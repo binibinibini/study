@@ -62,7 +62,8 @@ def main():
     # 세션 상태 초기화
     if 'messages' not in st.session_state:
         st.session_state['messages'] = [
-            {'role': 'sy리
+            {'role': 'system', 'content': '너는 유능한 AI 비서야.'},  # dict
+        ]
     # session_state에 저장된 messages(기존의 대화 내용들)를 화면에 출력.
     for msg in st.session_state.messages:
         # 시스템 메시지는 출력하지 않고, 사용자(user)와 비서(assistant) 메시지만 화면에 출력.
