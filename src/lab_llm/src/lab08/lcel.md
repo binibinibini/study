@@ -85,3 +85,85 @@ for msg in result:
 ```
 <img width="1250" height="29" alt="image" src="https://github.com/user-attachments/assets/a3d53b8a-c193-4264-aa4b-2a6f6625c0b5" />
 
+
+# Prompt Template
+
+AI 모델을 호출(invoke)할 때 전달하는 메시지 형식이 매번 비슷할 때, 미리 템플릿을 작성해 두고 필요한 부분만 수정하면서 실행하는 방법.
+
+
+```python
+system_prompt = '너는 {story}에 나오는 {assistant_character}야. 역할에 맞게 사용자와 대화해줘.'
+human_prompt = '안녕? 나는 {user_character}야. 오늘 시간 있으면 {activity} 같이 할까?'
+prompt_template = ChatPromptTemplate([
+    ('system', system_prompt),    # 문자열, 템플릿 문자열
+    ('human', human_prompt),
+])
+# argument: ('role', prompt_message) 아이템으로 갖는 리스트
+```
+```python
+# 프롬프트 템플릿의 {variable}의 값을 채움.
+# -> ChatPromptTemplate을 메시지들(SystemMessage, HumanMessage)의 리스트(list)로 변환.
+messages = prompt_template.invoke({     # key:value 로 전달
+    'story': '미녀와 야수',
+    'assistant_character': '벨',
+    'user_character': '가스통',
+    'activity': '저녁',
+})
+```
+```python
+print(messages)    # messages는 리스트 -> [SystemMessage, HumanMessage]
+```
+<img width="1573" height="48" alt="image" src="https://github.com/user-attachments/assets/7da21d81-39df-408c-ad62-a39234284946" />
+
+```python
+response = model.invoke(input = messages)
+```
+```python
+print(response.content)    # content를 찾아서 출력
+```
+<img width="1412" height="27" alt="image" src="https://github.com/user-attachments/assets/2e4389e5-8147-4cec-b12e-4ca1ccf8bdd3" />
+
+```python
+type(response)
+```
+<img width="304" height="31" alt="image" src="https://github.com/user-attachments/assets/28d38fb8-5e1c-47c3-b091-719207cdd89e" />
+
+```python
+response.pretty_print()    # pretty_print() -> 헤더도 넣어주고, content만 찾아서 출력해줌
+```
+<img width="1419" height="75" alt="image" src="https://github.com/user-attachments/assets/ba653e2e-37b0-454f-8615-48c31dd1bf75" />
+
+```python
+messages = prompt_template.invoke({
+    'story':'미녀와 야수',
+    'assistant_character': '벨',
+    'user_character': '야수',
+    'activity': '저녁',
+})
+```
+```python
+response = model.invoke(input = messages)
+```
+```python
+response.pretty_print()
+```
+<img width="784" height="81" alt="image" src="https://github.com/user-attachments/assets/f3fb3e78-4300-4308-bd24-4d1d64eae57f" />
+
+## chain을 사용한 프롬프트 템플릿
+
+```python
+chain = prompt_template | model
+```
+```python
+response = chain.invoke({
+    'story': '배트맨',
+    'assistant_character': '조커',
+    'user_character': '할리 퀸',
+    'activity': '은행 털기'
+})
+```
+```python
+response.pretty_print()
+```
+<img width="1616" height="96" alt="image" src="https://github.com/user-attachments/assets/e50099bb-6f46-452d-9a03-44526b356887" />
+
