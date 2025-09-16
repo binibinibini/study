@@ -49,7 +49,7 @@ ai_message.pretty_print()
 
 ```python
 @tool
-def get_current_time(timezone, location) -> str:
+def get_current_time(timezone: str, location: str) -> str:
     """해당 timezone의 현재 날짜 시간을 문자열로 리턴.
 
     Args:
