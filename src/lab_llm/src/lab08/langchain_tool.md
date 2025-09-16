@@ -39,7 +39,13 @@ print(ai_message)
 ```python
 ai_message.pretty_print()
 ```
-<img width="1360" height="163" alt="image" src="https://github.com/user-attachments/assets/75f95603-518a-4687-a229-843cc40bf382" />
+<img width="700" height="92" alt="image" src="https://github.com/user-attachments/assets/e664df36-b2ba-4033-a3f6-6cc670b00177" />
+
+```
+도구(tool)을 AI에게 제공하고, AI는 tool 목록에 있는 함수 호출(function calling)을 요청해서 에이전트가 함수 호출 결과를 다시 AI에게 전송하면 AI는 함수 호출 결과를 바탕으로 답변을 생성할 수 있음.
+
+사용자 질문(도구 목록 제공) -> AI 도구 호출 -> 사용자 함수 호출 결과 -> AI 답변 생성.
+```
 
 ```python
 @tool
