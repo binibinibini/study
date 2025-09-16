@@ -1,4 +1,4 @@
-# # LangChain`@tool` 데코레이터
+# LangChain`@tool` 데코레이터
 
 ```python
 from datetime import datetime
