@@ -1,0 +1,25 @@
+{
+  "pages": [
+    {
+      "id": 1,
+      "title": "인트로",
+      "description": "서비스 소개 및 시작 버튼",
+      "module": "page1",
+      "function": "show_opening_page"
+    },
+    {
+      "id": 2,
+      "title": "이미지 분석",
+      "description": "Roboflow를 통한 모니터 감지 및 인치 입력",
+      "module": "page2",
+      "function": "run_monitor_detection"
+    },
+    {
+      "id": 3,
+      "title": "사용자 정보 입력",
+      "description": "성별, 키, 주 사용 손 입력",
+      "module": "page3",
+      "function": "user_info_form"
+    }
+  ]
+}
