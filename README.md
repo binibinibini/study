@@ -9,3 +9,10 @@
 
 [감정 분석 프로젝트](https://github.com/binibinibini/project2.git)
 - [발표 자료](https://docs.google.com/presentation/d/1yRYz8jSv_VwHJIk6l3nCtfO1VoO1Jxt4/edit?usp=sharing&ouid=116413280130938266406&rtpof=true&sd=true)
+
+---------------
+
+# Project #3
+
+[책상 환경을 진단하고 개선해주는 AI 기반 프로젝트](https://github.com/binibinibini/project3.git)
+- [발표 자료](https://docs.google.com/presentation/d/1MKx2OHbTf_ViDdTwbASfQeyOhodeTja7zB3pLnXR_uc/edit?usp=sharing)
