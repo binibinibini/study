@@ -86,5 +86,6 @@ if __name__ == '__main__':
     delete_dept(no)
 ```
 <br>
+
 ![image](https://github.com/user-attachments/assets/6e64d7bc-1d5b-4a9e-a472-e3da5ae5b88d)
 
