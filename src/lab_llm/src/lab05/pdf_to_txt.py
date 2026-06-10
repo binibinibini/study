@@ -1,6 +1,4 @@
-```python
 import pymupdf
-
 
 def main():
     # 원본 PDF 파일 이름과 경로
@@ -21,4 +19,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```
